@@ -1,0 +1,144 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero*/
+#hero-section{
+    background-color: #002F6C;
+    color: white;
+}
+
+#hero-section h1{
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+#hero-section .red-text{
+    color: #E4002B;
+}
+
+#hero-section p{
+    font-size: 1.1rem;
+}
+
+#hero-section .btn-red{
+    background-color: #E4002B;
+    color: white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+    border: none;
+}
+
+#hero-section .btn-outline{
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 25px;
+}
+
+#hero-section .btn-red:hover {
+    background-color: #C0002A;
+}
+
+#hero-section .btn-outline:hover{
+    background-color: rgba(255,255,255,0.1);
+}
+
+/*Feature*/
+
+#features-section{
+    background-color: #f5f5f5;
+}
+
+#features-section h2{
+    font-weight: bold;
+    color: #002F6C;
+    font-size: 2.5rem;
+}
+
+#features-section .feature-card{
+    background-color: white;
+    border-radius: 10px;
+    transition: transform 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#features-section .feature-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+#features-section .icon-box{
+    font-size: 2.5rem;
+}
+
+#features-section h5{
+    color: #002F6C;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Stats Section - Red Background */
+#stats-section {
+    background-color: #E4002B;
+    color: white;
+}
+
+#stats-section h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+#stats-section p {
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+/* CTA Section - Navy Blue Background */
+#cta-section {
+    background-color: #002F6C;
+    color: white;
+}
+
+#cta-section h2 {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+#cta-section .btn-white {
+    background-color: white;
+    color: #002F6C;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+}
+
+#cta-section .btn-white:hover {
+    background-color: #f0f0f0;
+}
+
+/* Footer - Dark Navy */
+footer {
+    background-color: #001A3D;
+    color: white;
+}
+
+/* Phone Mockup Area */
+.phone-mockup {
+    background-color: rgba(255, 255, 255, 0.1);
+    min-height: 500px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
