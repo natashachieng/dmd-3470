@@ -1,260 +1,316 @@
+/* ═══════════════════════════════════════
+   GLOBAL
+═══════════════════════════════════════ */
 :root {
-      --brand: lch(45% 80 280);
-      --dark: lch(12% 20 280);
-      --radius: 20px;
-    }
+  --brand: lch(45% 80 280);
+  --dark: lch(12% 20 280);
+  --radius: 20px;
+}
 
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background-color: #6159e9;
-      color: var(--dark);
-      overflow-x: hidden;
-    }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #6159e9;
+  color: var(--dark);
+  overflow-x: hidden;
+}
 
-      /* ── HERO ── */
-    .hero {
-      position: relative;
-      min-height: 100svh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      background-image: url(https://www.freepik.com/free-photos-vectors/subtle-gradient-background/28);
-    }
+/* ═══════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════ */
+h2 {
+  font-family: 'League Gothic', sans-serif;
+  font-size: 1.6rem;
+}
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(97, 89, 233, 0.25);
-      z-index: 0;
-    }
+p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: lch(35% 5 280);
+}
 
-    .hero-nav,
-    .hero-title {
-      position: relative;
-      z-index: 1;
-    }
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-image: url(https://www.freepik.com/free-photos-vectors/subtle-gradient-background/28);
+}
 
-    .hero-nav {
-      padding: 1.5rem;
-    }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(97, 89, 233, 0.25);
+  z-index: 0;
+}
 
-    .hero-nav span {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.12em;
-      color: rgba(255,255,255,0.8);
-      text-transform: uppercase;
-    }
+.hero-nav,
+.hero-title {
+  position: relative;
+  z-index: 1;
+}
 
-    .hero-title {
-      margin-top: auto;
-      padding: 0 1.5rem 3rem;
-      text-align: right;
-    }
+.hero-nav {
+  padding: 1.5rem;
+}
 
-    .hero-title h1 {
-      font-family: 'League Gothic', sans-serif;
-      font-size: clamp(4.5rem, 18vw, 10rem);
-      line-height: 0.88;
-      color: white;
-      letter-spacing: 0.01em;
-      text-shadow: 0 4px 40px rgba(0,0,0,0.2);
-    }
+.hero-nav span {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: rgba(255, 255, 255, 0.8);
+  text-transform: uppercase;
+}
 
-    /* ── CARDS ── */
-    .card {
-      border: none;
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: 0 2px 20px lch(0% 0 0 / 0.08);
-    }
+.hero-title {
+  margin-top: auto;
+  padding: 0 1.5rem 3rem;
+  text-align: right;
+}
 
-    /* ── BADGES ── */
-    .pill {
-      display: inline-block;
-      width: fit-content;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 6px;
-      border: none;
-      margin-bottom: 0.85rem;
-      line-height: 1.4;
-      color: white !important;
-    }
+.hero-title h1 {
+  font-family: 'League Gothic', sans-serif;
+  font-size: clamp(4.5rem, 18vw, 10rem);
+  line-height: 0.88;
+  color: white;
+  letter-spacing: 0.01em;
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.2);
+}
 
-    .pill-yellow { background: lch(60% 75 75); }
-    .pill-orange { background: lch(55% 80 45); }
-    .pill-blue   { background: lch(45% 80 250); }
-    .pill-red    { background: lch(48% 75 25); }
-    .pill-pink   { background: lch(48% 75 330); }
-    .pill-purple { background: lch(42% 80 290); }
+/* ═══════════════════════════════════════
+   CARDS
+═══════════════════════════════════════ */
+.card {
+  border: none;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: 0 2px 20px lch(0% 0 0 / 0.08);
+}
 
-    /* ── TYPOGRAPHY ── */
-    h2 {
-      font-family: 'League Gothic', sans-serif;
-      font-size: 1.6rem;
-    }
+/* ═══════════════════════════════════════
+   PILLS / BADGES
+═══════════════════════════════════════ */
+.pill {
+  display: inline-block;
+  width: fit-content;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 0.85rem;
+  line-height: 1.4;
+  color: white !important;
+}
 
-    p {
-      font-size: 0.92rem;
-      line-height: 1.7;
-      color: lch(35% 5 280);
-    }
+.pill-yellow { background: lch(60% 75 75); }
+.pill-orange { background: lch(55% 80 45); }
+.pill-blue   { background: lch(45% 80 250); }
+.pill-red    { background: lch(48% 75 25); }
+.pill-pink   { background: lch(48% 75 330); }
+.pill-purple { background: lch(42% 80 290); }
 
-    /* ── GAMUT CARD ── */
-    .gamut-card {
-      background: #000;
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
+/* ═══════════════════════════════════════
+   GAMUT CARD
+═══════════════════════════════════════ */
+.gamut-card {
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
 
-    .gamut-card img {
-      width: 100%;
-      flex: 1;
-      min-height: 0;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-    }
+.gamut-card img {
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
 
-    /* WHAT row — both columns same height */
-    .what-row {
-      align-items: stretch;
-    }
+/* ═══════════════════════════════════════
+   WHAT ROW
+═══════════════════════════════════════ */
+.what-row {
+  align-items: stretch;
+}
 
-    .what-row .col-12.col-md-6 {
-      display: flex;
-      flex-direction: column;
-    }
+.what-row .col-12.col-md-6 {
+  display: flex;
+  flex-direction: column;
+}
 
-    .what-row .card,
-    .what-row .gamut-card {
-      flex: 1;
-      height: 100%;
-    }
+.what-row .card,
+.what-row .gamut-card {
+  flex: 1;
+  height: 100%;
+}
 
-    .what-row .gamut-card {
-      display: flex;
-      flex-direction: column;
-    }
+.what-row .gamut-card {
+  display: flex;
+  flex-direction: column;
+}
 
-    .what-row .gamut-card img {
-      flex: 1;
-      width: 100%;
-      min-height: 0;
-      object-fit: cover;
-      display: block;
-    }
+.what-row .gamut-card img {
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  object-fit: cover;
+  display: block;
+}
 
-    
+.what-list {
+  font-size: 0.9rem;
+  color: #444;
+}
 
-    /* ── DEMO BUTTONS ── */
-    .demo-btn {
-      width: 160px;
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 12px;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: background 0.3s ease, color 0.3s ease;
-    }
+/* ═══════════════════════════════════════
+   WHY SECTION
+═══════════════════════════════════════ */
+.why-header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0.75rem;
+}
 
-    .btn-lch {
-      background: lch(35% 80 265);
-      color: white;
-    }
-    .btn-lch:hover {
-      background: lch(75% 80 265);
-      color: lch(12% 20 280);
-    }
+.why-header .pill {
+  margin-bottom: 0;
+}
 
-    .btn-hsl {
-      background: hsl(240, 100%, 35%);
-      color: white;
-    }
-    .btn-hsl:hover {
-      background: hsl(240, 100%, 75%);
-      color: lch(12% 20 280);
-    }
+.why-intro {
+  font-size: 0.88rem;
+  color: #555;
+}
 
-    .btn-note {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      color: lch(65% 5 280);
-      text-align: center;
-    }
+.why-caption {
+  font-size: 0.78rem;
+  color: #555;
+  line-height: 1.5;
+}
 
-    /* ── BROWSER IMG ── */
-    .browser-img {
-      width: 100%;
-      border-radius: 10px;
-      margin-top: 0.75rem;
-    }
+.lightness-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: #aaa;
+}
 
-    /* ── CITE ITEMS ── */
-    .cite-item {
-      font-size: 0.88rem;
-      color: lch(42% 5 280);
-      padding-bottom: 0.75rem;
-      border-bottom: 1px solid lch(92% 4 280);
-      line-height: 1.5;
-    }
-    .cite-item:last-child { border-bottom: none; padding-bottom: 0; }
+/* ═══════════════════════════════════════
+   DEMO BUTTONS
+═══════════════════════════════════════ */
+.demo-btn {
+  width: 160px;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
 
-    /* ── FOOTER ── */
-    footer {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.65rem;
-      color: rgba(255,255,255,0.4);
-      letter-spacing: 0.1em;
-    }
+.btn-lch {
+  background: lch(35% 80 265);
+  color: white;
+}
 
-    /* ── WHY badge right-aligned ── */
-    .why-header {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 0.75rem;
-    }
-    .why-header .pill { margin-bottom: 0; }
-    /* ── CITE LINKS ── */
-    .cite-item a {
-      color: lch(42% 80 290);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
+.btn-lch:hover {
+  background: lch(75% 80 265);
+  color: lch(12% 20 280);
+}
 
-    .cite-item a:hover {
-      color: lch(45% 80 280);
-      text-decoration: underline;
-    }
+.btn-hsl {
+  background: hsl(240, 100%, 35%);
+  color: white;
+}
 
-    /* ── CODE BLOCK (HOW section) ── */
-    .code-block {
-      background: lch(12% 20 280);
-      border-radius: 12px;
-      padding: 1.2rem 1.4rem;
-      margin-top: 1rem;
-      overflow-x: auto;
-      font-size: 0.78rem;
-      line-height: 1.9;
-    }
+.btn-hsl:hover {
+  background: hsl(240, 100%, 75%);
+  color: lch(12% 20 280);
+}
 
-    .code-block code {
-      font-family: 'DM Mono', monospace;
-      color: lch(85% 8 280);
-    }
+.btn-note {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.62rem;
+  color: lch(65% 5 280);
+  text-align: center;
+}
 
-    .code-comment { color: lch(55% 10 280); font-style: italic; }
-    .code-prop    { color: lch(72% 40 220); }
-    .code-hsl     { color: lch(72% 60 55);  }
-    .code-lch     { color: lch(78% 60 155); }
+/* ═══════════════════════════════════════
+   BROWSER SECTION
+═══════════════════════════════════════ */
+.browser-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 0.75rem;
+}
+
+/* ═══════════════════════════════════════
+   CITATIONS
+═══════════════════════════════════════ */
+.cite-item {
+  font-size: 0.88rem;
+  color: lch(42% 5 280);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid lch(92% 4 280);
+  line-height: 1.5;
+}
+
+.cite-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cite-item a {
+  color: lch(42% 80 290);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.cite-item a:hover {
+  color: lch(45% 80 280);
+  text-decoration: underline;
+}
+
+/* ═══════════════════════════════════════
+   CODE BLOCK
+═══════════════════════════════════════ */
+.code-block {
+  background: lch(12% 20 280);
+  border-radius: 12px;
+  padding: 1.2rem 1.4rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  font-size: 0.78rem;
+  line-height: 1.9;
+}
+
+.code-block code {
+  font-family: 'DM Mono', monospace;
+  color: lch(85% 8 280);
+}
+
+.code-comment { color: lch(55% 10 280); font-style: italic; }
+.code-prop    { color: lch(72% 40 220); }
+.code-hsl     { color: lch(72% 60 55); }
+.code-lch     { color: lch(78% 60 155); }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  font-family: 'DM Mono', monospace;
+  font-size: 0.65rem;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+}
