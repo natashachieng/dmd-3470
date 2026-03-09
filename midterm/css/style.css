@@ -58,10 +58,10 @@ p {
 }
 
 .hero-nav span {
-  font-family: 'DM Mono', monospace;
-  font-size: 0.7rem;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 1.3rem;
   letter-spacing: 0.12em;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffff;
   text-transform: uppercase;
 }
 
