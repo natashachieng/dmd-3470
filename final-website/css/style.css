@@ -1,0 +1,85 @@
+:root {
+      --cream: #f7f4ef;
+      --border: #d8d3cb;
+      --charcoal: #2a2a2a;
+      --ph: #ddd;
+      --ph-dark: #b0aba2;
+      --circle: #b5b0a8;
+    }
+
+    body { background: var(--cream); margin: 0; }
+    section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+
+    /* NAV */
+    nav {
+      border-bottom: 1px solid var(--border);
+      background: var(--cream);
+      padding: 14px 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-links { display: flex; gap: 20px; }
+
+    /* BLOCKS */
+    .ph  { background: var(--ph);      border: 1px solid var(--border); border-radius: 3px; }
+    .phd { background: var(--ph-dark); border: 1px solid #aaa;          border-radius: 3px; }
+    .ln  { background: var(--ph); border-radius: 2px; display: block; }
+    .btn-solid   { height: 32px; width: 110px; background: var(--charcoal); border: 1px solid var(--charcoal); display: inline-block; border-radius: 2px; }
+    .btn-outline { height: 32px; width: 110px; background: transparent; border: 1px solid var(--charcoal); display: inline-block; border-radius: 2px; }
+    .btn-outline-light { height: 32px; width: 100%; background: transparent; border: 1px solid rgba(255,255,255,.4); display: block; border-radius: 2px; }
+
+    /* HOW IT WORKS — bordered cards */
+    .step-card {
+      border: 1px solid var(--border);
+      background: #fff;
+      padding: 18px;
+    }
+
+    /* CIRCLE BEHIND IMAGE */
+    .img-circle-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .bg-circle {
+      position: absolute;
+      width: 82%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--circle);
+      z-index: 0;
+    }
+    .phone-img {
+      position: relative;
+      z-index: 1;
+      width: 58%;
+      aspect-ratio: 9/16;
+      border-radius: 16px;
+    }
+
+    /* PRICING */
+    .plan { border: 1px solid var(--border); background: #fff; padding: 22px 18px; }
+    .plan.featured { background: var(--charcoal); border-color: var(--charcoal); }
+    .plan.featured .ln { background: rgba(255,255,255,.2); }
+    .plan.featured .plan-div { border-color: #555; }
+    .plan-div { border-top: 1px solid var(--border); margin: 12px 0; }
+
+    /* BAND */
+    #band { background: #6b6b72; border-bottom: none; padding: 56px 0; }
+    .band-circle {
+      width: 48px; height: 48px; border-radius: 50%;
+      background: rgba(255,255,255,.25);
+      border: 1px solid rgba(255,255,255,.5);
+      margin: 16px auto 0;
+    }
+
+    /* TESTIMONIAL */
+    .testimonial-card {
+      border: 1px solid var(--border);
+      background: #f0ede8;
+      padding: 28px 32px;
+      border-radius: 4px;
+    }
