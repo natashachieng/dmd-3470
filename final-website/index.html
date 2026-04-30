@@ -1,271 +1,412 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sillage</title>
-  <!-- Bootstrap CSS (CDN) -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sillage — Wear A Memory You Haven't Made Yet</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;600&family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,700&display=swap" />
+
+  <!-- Bootstrap 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+
+  <!-- styles -->
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="ph" style="width:70px;height:12px;"></div>
-  <div class="nav-links">
-    <div class="ph" style="width:45px;height:9px;"></div>
-    <div class="ph" style="width:70px;height:9px;"></div>
-    <div class="ph" style="width:70px;height:9px;"></div>
-    <div class="ph" style="width:45px;height:9px;"></div>
-    <div class="ph" style="width:45px;height:9px;"></div>
-  </div>
-</nav>
+<!-- ================================================================
+     NAVBAR
+     ================================================================ -->
+<header>
+  <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main navigation">
+    <div class="container" style="max-width:1100px;">
 
-<!-- HERO -->
-<section>
-  <div class="container">
-    <div class="row align-items-center g-4">
-      <div class="col-md-6">
-        <span class="ln mb-2" style="width:92%;height:22px;"></span>
-        <span class="ln mb-2" style="width:82%;height:22px;"></span>
-        <span class="ln mb-3" style="width:68%;height:22px;"></span>
-        <span class="ln mb-1" style="width:78%;height:10px;"></span>
-        <span class="ln mb-3" style="width:62%;height:10px;"></span>
-        <div class="d-flex gap-2">
-          <div class="btn-solid"></div>
-          <div class="btn-outline"></div>
-        </div>
+      <a class="navbar-brand" href="#">Sillage</a>
+
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#how-it-works">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link" href="#why-sillage">Why Sillage</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#review">Review</a></li>
+        </ul>
       </div>
-      <div class="col-md-6">
-        <div class="ph" style="aspect-ratio:2/3; border-radius:6px;"></div>
-      </div>
+
     </div>
-  </div>
-</section>
+  </nav>
+</header>
 
-<!-- HOW IT WORKS -->
-<section class="text-center">
-  <div class="container">
-    <span class="ln mb-1 mx-auto" style="width:160px;height:20px;"></span>
-    <span class="ln mb-4 mx-auto" style="width:110px;height:10px;"></span>
-    <div class="row g-3 justify-content-center">
-      <div class="col-md-4">
-        <div class="step-card">
-          <div class="ph mb-3" style="width:40px;height:40px;"></div>
-          <span class="ln mb-2" style="width:80%;height:13px;"></span>
-          <span class="ln mb-1" style="width:95%;height:9px;"></span>
-          <span class="ln mb-1" style="width:85%;height:9px;"></span>
-          <span class="ln" style="width:70%;height:9px;"></span>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="step-card">
-          <div class="ph mb-3" style="width:40px;height:40px;"></div>
-          <span class="ln mb-2" style="width:80%;height:13px;"></span>
-          <span class="ln mb-1" style="width:95%;height:9px;"></span>
-          <span class="ln mb-1" style="width:85%;height:9px;"></span>
-          <span class="ln" style="width:70%;height:9px;"></span>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="step-card">
-          <div class="ph mb-3" style="width:40px;height:40px;"></div>
-          <span class="ln mb-2" style="width:80%;height:13px;"></span>
-          <span class="ln mb-1" style="width:95%;height:9px;"></span>
-          <span class="ln mb-1" style="width:85%;height:9px;"></span>
-          <span class="ln" style="width:70%;height:9px;"></span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<main>
 
-<!-- WHY SILLAGE -->
-<section>
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6">
-        <span class="ln mb-4" style="width:140px;height:20px;"></span>
-        <div class="d-flex gap-3 mb-3 pb-3" style="border-bottom:1px solid var(--border);">
-          <div class="ph rounded-circle flex-shrink-0" style="width:32px;height:32px;"></div>
-          <div class="flex-grow-1">
-            <span class="ln mb-2" style="width:60%;height:12px;"></span>
-            <span class="ln mb-1" style="width:90%;height:9px;"></span>
-            <span class="ln" style="width:75%;height:9px;"></span>
+  <!-- ================================================================
+       HERO
+       ================================================================ -->
+  <section class="hero" aria-label="Hero">
+    <div class="container" style="max-width:1100px;">
+      <div class="row align-items-center">
+
+        <div class="col-lg-6 hero__content">
+          <p class="hero__eyebrow">est. 26</p>
+          <h1 class="hero__title">Wear A Memory<br>You Haven't Made Yet.</h1>
+          <p class="hero__subtitle">
+            A new scent destination, delivered to your door<br>every month.
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <button class="hero__btn-primary">Start Your Journey</button>
+            <button class="hero__btn-secondary">Explore Scents</button>
           </div>
         </div>
-        <div class="d-flex gap-3 mb-3 pb-3" style="border-bottom:1px solid var(--border);">
-          <div class="ph rounded-circle flex-shrink-0" style="width:32px;height:32px;"></div>
-          <div class="flex-grow-1">
-            <span class="ln mb-2" style="width:65%;height:12px;"></span>
-            <span class="ln mb-1" style="width:90%;height:9px;"></span>
-            <span class="ln" style="width:80%;height:9px;"></span>
+
+        <!-- Opening/background image -->
+        <div class="col-lg-6 d-none d-lg-flex justify-content-end align-items-center py-4">
+          <img
+            class="hero__img"
+            src="images/perf.png"
+            alt="Amber Haze perfume bottle surrounded by passion fruit and red poppy"
+          />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       HOW IT WORKS
+       ================================================================ -->
+  <section class="hiw" id="how-it-works" aria-label="How it works">
+    <div class="container" style="max-width:1000px;">
+
+      <div class="text-center mb-5">
+        <h2 class="sec-title">How it Works</h2>
+        <p class="sec-subtitle">A scent ritual, simplified.</p>
+        <p class="sec-tagline">Three steps. One monthly surprise.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+
+        <!-- Card 1 -->
+        <div class="col-sm-10 col-md-4">
+          <article class="hiw-card text-center">
+            <div class="hiw-card__icon">
+              <img src="images/front_hand.png" alt="Front hand curation icon" loading="lazy" />
+            </div>
+            <h3 class="hiw-card__title">We Curate.</h3>
+            <p class="hiw-card__desc">Our perfumers select a destination-inspired scent each month, places you've been, or dream of going.</p>
+          </article>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-sm-10 col-md-4">
+          <article class="hiw-card text-center">
+            <div class="hiw-card__icon">
+              <img src="images/Package.png" alt="Package delivery icon" loading="lazy" />
+            </div>
+            <h3 class="hiw-card__title">We Deliver.</h3>
+            <p class="hiw-card__desc">An 8ml travel vial arrives at your door, with a card telling the story of where this scent takes you.</p>
+          </article>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-sm-10 col-md-4">
+          <article class="hiw-card text-center">
+            <div class="hiw-card__icon">
+              <img src="images/Search.png" alt="Search discovery icon" loading="lazy" />
+            </div>
+            <h3 class="hiw-card__title">You Discover.</h3>
+            <p class="hiw-card__desc">Wear it, keep it, or swap it. Build a collection of places, one scent at a time.</p>
+          </article>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================
+       WHY SILLAGE
+       ================================================================ -->
+  <section class="why" id="why-sillage" aria-label="Why Sillage">
+    <div class="container" style="max-width:1100px;">
+      <div class="row g-5 align-items-start">
+
+        <div class="col-lg-6">
+          <h2 class="sec-title mb-5">Why Sillage</h2>
+
+          <article class="why__idea">
+            <img class="why__idea-img" src="images/Map-pin.png" alt="Location pin icon" loading="lazy" />
+            <div>
+              <h3 class="why__idea-title">Destination-inspired, every time.</h3>
+              <p class="why__idea-desc">Each scent is mapped to a real place, a forest in Kyoto, a souk in Marrakech, a clifftop in Brittany.</p>
+            </div>
+          </article>
+
+          <article class="why__idea">
+            <img class="why__idea-img" src="images/front_hand.png" alt="Front hand perfumer icon" loading="lazy" />
+            <div>
+              <h3 class="why__idea-title">Curated by master perfumers.</h3>
+              <p class="why__idea-desc">No algorithms. Every vial is selected by hand, chosen for its ability to transport you somewhere new.</p>
+            </div>
+          </article>
+
+          <article class="why__idea">
+            <img class="why__idea-img" src="images/Package.png" alt="Package icon" loading="lazy" />
+            <div>
+              <h3 class="why__idea-title">Packaging worth keeping.</h3>
+              <p class="why__idea-desc">Each delivery comes with a wax-sealed card, tissue wrapping, and a scent story written just for that month.</p>
+            </div>
+          </article>
+
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <button class="why__btn-dark">Start Subscribing</button>
+            <button class="why__btn-outline">See Past Scents</button>
           </div>
         </div>
-        <div class="d-flex gap-3 mb-4">
-          <div class="ph rounded-circle flex-shrink-0" style="width:32px;height:32px;"></div>
-          <div class="flex-grow-1">
-            <span class="ln mb-2" style="width:55%;height:12px;"></span>
-            <span class="ln mb-1" style="width:90%;height:9px;"></span>
-            <span class="ln" style="width:70%;height:9px;"></span>
-          </div>
+
+       
+        <div class="col-lg-5 d-flex align-items-stretch">
+          <picture>
+            <source media="(min-width: 768px)" srcset="images/image1.png" />
+            <img
+              class="why__photo"
+              src="images/image1.png"
+              alt="April Aromatics perfume bottles arranged on a wooden surface"
+              loading="lazy"
+            />
+          </picture>
         </div>
-        <div class="d-flex gap-2">
-          <div class="btn-solid"></div>
-          <div class="btn-outline"></div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="img-circle-wrap">
-          <div class="bg-circle"></div>
-          <div class="ph phone-img"></div>
-        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- FEATURED VIAL -->
-<section>
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6">
-        <div class="img-circle-wrap">
-          <div class="bg-circle"></div>
-          <div class="ph phone-img"></div>
+  <!-- ================================================================
+       THE OCTOBER VIAL
+       ================================================================ -->
+  <section class="october" aria-label="The October Vial">
+    <div class="container" style="max-width:1100px;">
+      <div class="row g-5 align-items-center">
+
+        <div class="col-lg-5">
+          <picture>
+            <source media="(min-width: 768px)" srcset="images/image2.png" />
+            <img
+              class="october__img"
+              src="images/image2.png"
+              alt="Glass perfume vial with cork stopper beside stacked books"
+              loading="lazy"
+            />
+          </picture>
         </div>
-      </div>
-      <div class="col-md-6">
-        <span class="ln mb-2" style="width:40px;height:8px;"></span>
-        <span class="ln mb-2" style="width:85%;height:22px;"></span>
-        <span class="ln mb-3" style="width:65%;height:22px;"></span>
-        <span class="ln mb-1" style="width:90%;height:9px;"></span>
-        <span class="ln mb-1" style="width:82%;height:9px;"></span>
-        <span class="ln mb-4" style="width:68%;height:9px;"></span>
-        <div class="btn-solid"></div>
+
+        <div class="col-lg-7">
+          <h2 class="october__title">The October Vial.</h2>
+          <p class="october__subtitle">Forêt de Brocéliande.</p>
+          <p class="october__notes">
+            Notes of wet oak, white cedar, and black pepper.<br>
+            Inspired by the mythic forests of Brittany. Ancient, mossy, still.
+          </p>
+          <p class="october__meta">8ml · Eau de Parfum · Limited edition</p>
+          <button class="october__btn">Get This Scent</button>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- YOUR SCENT / STORY -->
-<section>
-  <div class="container">
-    <div class="row g-4 align-items-center">
-      <div class="col-md-6">
-        <span class="ln mb-2" style="width:85%;height:22px;"></span>
-        <span class="ln mb-3" style="width:62%;height:22px;"></span>
-        <span class="ln mb-1" style="width:92%;height:9px;"></span>
-        <span class="ln mb-1" style="width:86%;height:9px;"></span>
-        <span class="ln mb-3" style="width:74%;height:9px;"></span>
-        <span class="ln mb-1" style="width:92%;height:9px;"></span>
-        <span class="ln mb-4" style="width:78%;height:9px;"></span>
-        <div class="btn-solid"></div>
-      </div>
-      <div class="col-md-6">
-        <div class="img-circle-wrap">
-          <div class="bg-circle"></div>
-          <div class="ph phone-img"></div>
+  <!-- ================================================================
+       YOUR SCENT. YOUR STORY.
+       ================================================================ -->
+  <section class="scent" aria-label="Your scent, your story">
+    <div class="container" style="max-width:1100px;">
+      <div class="row g-5 align-items-center">
+
+        <div class="col-lg-7">
+          <h2 class="scent__title">Your scent. Your story.</h2>
+          <p class="scent__tagline">Built for the curious.</p>
+          <p class="scent__para">
+            Sillage is for people who travel with intention, collect experiences,
+            and believe a scent is the shortest distance between here and somewhere else.
+          </p>
+          <p class="scent__para">
+            Every subscription includes free shipping, a handwritten destination card,
+            and access to our archive of past vials.
+          </p>
+          <button class="scent__btn">Start Your Journey</button>
         </div>
+
+       
+        <div class="col-lg-5">
+          <picture>
+            <source media="(min-width: 768px)" srcset="images/image3.png" />
+            <img
+              class="scent__img"
+              src="images/image3.png"
+              alt="Star anise and dried botanicals spread on parchment paper"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- DARK BAND -->
-<section id="band" class="text-center">
-  <div class="container">
-    <div style="background:rgba(255,255,255,.25);border-radius:2px;width:200px;height:14px;margin:0 auto;"></div>
-    <div class="band-circle"></div>
-  </div>
-</section>
+  <!-- ================================================================
+       VIDEO
+       ================================================================ -->
+  <section class="video-sec" aria-label="Video preview">
+    <p class="video-sec__text">See what arrives at your door...</p>
+    <button class="video-sec__play" aria-label="Play video">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+    </button>
+  </section>
 
-<!-- PRICING -->
-<section class="text-center">
-  <div class="container">
-    <span class="ln mb-1 mx-auto" style="width:180px;height:20px;"></span>
-    <span class="ln mb-4 mx-auto" style="width:120px;height:10px;"></span>
-    <div class="row g-4 justify-content-center" style="max-width:700px;margin:0 auto;">
-      <div class="col-md-4">
-        <div class="plan h-100">
-          <span class="ln mb-1" style="width:70px;height:22px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80px;height:8px;"></span>
-          <div class="plan-div"></div>
-          <span class="ln mb-2 mx-auto" style="width:90%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:80%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:85%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:75%;height:8px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80%;height:8px;"></span>
-          <div class="plan-div"></div>
-          <div class="btn-outline" style="width:100%;"></div>
+  <!-- ================================================================
+       PRICING
+       ================================================================ -->
+  <section class="pricing" id="pricing" aria-label="Pricing plans">
+    <div class="container" style="max-width:1000px;">
+
+      <h2 class="pricing__title">Choose your plan</h2>
+
+      <div class="row g-4 justify-content-center align-items-end">
+
+        <!-- Wanderer -->
+        <div class="col-sm-10 col-md-4">
+          <article class="p-card">
+            <p class="p-card__plan">Wanderer</p>
+            <p class="p-card__price">$18/mo</p>
+            <p class="p-card__tagline">For the curious.</p>
+            <ul class="p-card__features">
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>1 vial per month (8ml)</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Destination card included</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Free shipping</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Scent archive access</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Cancel anytime</li>
+            </ul>
+            <button class="p-card__btn">Start free trial</button>
+          </article>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="plan featured h-100">
-          <span class="ln mb-1" style="width:70px;height:22px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80px;height:8px;"></span>
-          <div class="plan-div"></div>
-          <span class="ln mb-2 mx-auto" style="width:90%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:80%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:85%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:75%;height:8px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80%;height:8px;"></span>
-          <div class="plan-div"></div>
-          <div class="btn-outline-light"></div>
+
+        <!-- Voyager (featured) -->
+        <div class="col-sm-10 col-md-4">
+          <article class="p-card p-card--featured">
+            <p class="p-card__plan">Voyager</p>
+            <p class="p-card__price">$28/mo</p>
+            <p class="p-card__tagline">For the devoted.</p>
+            <ul class="p-card__features">
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>2 vials per month (8ml each)</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Destination card included</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Free shipping</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Swap any vial once</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Early access to limited editions</li>
+            </ul>
+            <button class="p-card__btn">Start free trial</button>
+          </article>
         </div>
-      </div>
-      <div class="col-md-4">
-        <div class="plan h-100">
-          <span class="ln mb-1" style="width:70px;height:22px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80px;height:8px;"></span>
-          <div class="plan-div"></div>
-          <span class="ln mb-2 mx-auto" style="width:90%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:80%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:85%;height:8px;"></span>
-          <span class="ln mb-2 mx-auto" style="width:75%;height:8px;"></span>
-          <span class="ln mb-3 mx-auto" style="width:80%;height:8px;"></span>
-          <div class="plan-div"></div>
-          <div class="btn-solid" style="width:100%;"></div>
+
+        <!-- Connoisseur -->
+        <div class="col-sm-10 col-md-4">
+          <article class="p-card">
+            <p class="p-card__plan">Connoisseur</p>
+            <p class="p-card__price">$45/mo</p>
+            <p class="p-card__tagline">For the collector.</p>
+            <ul class="p-card__features">
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>3 vials per month (8ml each)</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Handwritten destination card</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Free express shipping</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Unlimited swaps</li>
+              <li class="p-card__feature"><span class="p-card__bullet" aria-hidden="true"></span>Exclusive annual gift</li>
+            </ul>
+            <button class="p-card__btn">Start free trial</button>
+          </article>
         </div>
+
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- TESTIMONIAL -->
-<section class="text-center">
-  <div class="container" style="max-width:600px;">
-    <span class="ln mb-1 mx-auto" style="width:200px;height:18px;"></span>
-    <span class="ln mb-4 mx-auto" style="width:130px;height:10px;"></span>
-    <div class="testimonial-card">
-      <div class="ph mx-auto mb-3" style="width:48px;height:48px;border-radius:50%;"></div>
-      <span class="ln mb-2 mx-auto" style="width:88%;height:11px;"></span>
-      <span class="ln mb-2 mx-auto" style="width:75%;height:11px;"></span>
-      <span class="ln mx-auto" style="width:90px;height:8px;margin-top:14px;"></span>
+  <!-- ================================================================
+       REVIEW
+       ================================================================ -->
+  <section class="review-sec" id="review" aria-label="Customer reviews">
+    <div class="container" style="max-width:760px;">
+
+      <p class="review-sec__heading">What our subscribers say</p>
+
+      <article class="review-card">
+        <div class="review-card__avatar-wrap">
+          
+          <picture>
+            <source media="(min-width: 480px)" srcset="images/reviewer.png" />
+            <img
+              class="review-card__avatar"
+              src="images/reviewer.png"
+              alt="Margaux D., Voyager subscriber from Paris"
+              loading="lazy"
+            />
+          </picture>
+        </div>
+        <blockquote class="mb-0">
+          <p class="review-card__quote">"I've never been to Kyoto. Now I feel like I have."</p>
+          <p class="review-card__body">The October vial stopped me in my tracks. I wore it every day until it ran out.</p>
+          <footer>
+            <p class="review-card__name">Margaux D.</p>
+            <p class="review-card__meta">Voyager subscriber · Paris</p>
+          </footer>
+        </blockquote>
+      </article>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- CTA -->
-<section class="text-center" style="border-bottom:none;">
-  <div class="container">
-    <span class="ln mb-1 mx-auto" style="width:240px;height:20px;"></span>
-    <span class="ln mb-4 mx-auto" style="width:160px;height:10px;"></span>
-    <div class="d-flex gap-2 justify-content-center">
-      <div class="btn-solid"></div>
-      <div class="btn-outline"></div>
+</main>
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer class="site-footer">
+  <div class="container" style="max-width:960px;">
+    <h2 class="site-footer__title">Ready to begin your journey?</h2>
+    <div class="d-flex gap-3 justify-content-center flex-wrap mb-4">
+      <button class="site-footer__btn-gold">Start free trial</button>
+      <button class="site-footer__btn-outline">Explore scents</button>
     </div>
+    <p class="site-footer__copy">© 2026 Sillage. All rights reserved.</p>
+    <p class="site-footer__privacy">Privacy policy</p>
   </div>
-</section>
 
-<!-- FOOTER -->
-<div style="border-top:1px solid var(--border);padding:20px 0;display:flex;justify-content:center;gap:32px;">
-  <div class="ph" style="width:100px;height:9px;"></div>
-  <div class="ph" style="width:60px;height:9px;"></div>
-</div>
+  <button
+    class="back-to-top"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Back to top"
+  >
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M12 4l-8 8h5v8h6v-8h5z"/>
+    </svg>
+  </button>
+</footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap 5 JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>

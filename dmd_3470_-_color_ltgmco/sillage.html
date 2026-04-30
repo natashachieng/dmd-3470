@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sillage — Wear A Memory You Haven&#39;t Made Yet.</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;600&family=Cormorant:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=DM+Sans:wght@200;300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── Reset ─── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; border: none; background: none; font: inherit; }
+    ul { list-style: none; }
+
+    /* ─── Design tokens ─── */
+    :root {
+      --cream:       #f5f1eb;
+      --cream-mid:   #e8ddd0;
+      --dark-green:  #2d3b35;
+      --brown-dark:  #2c2114;
+      --brown-mid:   #7a6a52;
+      --brown-light: #8f7f66;
+      --gold:        #c4a97d;
+      --gold-dim:    #b89868;
+      --tan:         #6c6868;
+      --text-soft:   #827562;
+    }
+
+    /* ─── Body ─── */
+    body {
+      background: var(--cream);
+      overflow-x: hidden;
+      font-family: 'DM Sans', Helvetica, sans-serif;
+    }
+
+    /* ═══════════════════════════════════════
+       NAVBAR
+    ═══════════════════════════════════════ */
+    .navbar {
+      width: 100%;
+      background: var(--dark-green);
+      padding: 24px 96px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .navbar-logo {
+      font-family: 'Cormorant Unicase', Helvetica, serif;
+      font-weight: 600;
+      color: var(--cream-mid);
+      font-size: 30px;
+    }
+    .navbar-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .navbar-links a {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-light);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .navbar-links a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    .hero {
+      background: var(--dark-green);
+      padding: 80px 96px;
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-content {
+      flex: 1;
+      max-width: 576px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .hero-est {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      color: var(--gold);
+      font-size: 16px;
+    }
+    .hero-heading {
+      font-family: 'Cormorant Unicase', Helvetica, serif;
+      font-weight: 600;
+      color: var(--cream-mid);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.15;
+      text-shadow: 0 4px 4px #2c2114;
+    }
+    .hero-sub {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-mid);
+      font-size: 20px;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-top: 8px;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .btn-gold:hover { background: var(--gold-dim); }
+    .btn-ghost {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--gold);
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--cream-mid); }
+    .hero-image {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .hero-image img {
+      width: 100%;
+      max-width: 512px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    /* ═══════════════════════════════════════
+       HOW IT WORKS
+    ═══════════════════════════════════════ */
+    .how-it-works {
+      background: var(--cream);
+      padding: 96px 96px;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .section-header h2 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 600;
+      color: var(--brown-dark);
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+    .section-header .subtitle-italic {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--brown-mid);
+      font-size: 30px;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+    .section-header .subtitle-small {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      color: var(--text-soft);
+      font-size: 20px;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .card {
+      background: var(--cream-mid);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 16px;
+    }
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--gold);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card-icon img { width: 28px; height: 28px; }
+    .card h3 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 400;
+      color: var(--brown-dark);
+      font-size: 30px;
+    }
+    .card p {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 400;
+      color: var(--brown-mid);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* ═══════════════════════════════════════
+       WHY SILLAGE
+    ═══════════════════════════════════════ */
+    .why-sillage {
+      background: var(--cream);
+      padding: 96px 96px;
+    }
+    .two-col {
+      display: flex;
+      gap: 64px;
+      align-items: flex-start;
+    }
+    .two-col-left { flex: 1; }
+    .two-col-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+    }
+    .two-col-right img {
+      width: 100%;
+      max-width: 340px;
+      border-radius: 16px;
+      object-fit: cover;
+    }
+    .why-title {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 600;
+      color: var(--brown-dark);
+      font-size: 48px;
+      margin-bottom: 48px;
+    }
+    .reasons { display: flex; flex-direction: column; gap: 48px; }
+    .reason { display: flex; align-items: flex-start; gap: 24px; }
+    .reason-icon {
+      width: 76px;
+      height: 76px;
+      flex-shrink: 0;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .reason-icon img { width: 32px; height: 32px; }
+    .reason h3 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--brown-dark);
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    .reason p {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      color: var(--brown-mid);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .why-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-top: 56px;
+    }
+    .btn-dark {
+      background: var(--brown-dark);
+      color: var(--cream-mid);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .btn-dark:hover { background: #3d2f1e; }
+    .btn-outline {
+      border: 2px solid var(--brown-mid);
+      color: var(--brown-mid);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 9999px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       THE OCTOBER VIAL
+    ═══════════════════════════════════════ */
+    .october-vial {
+      background: var(--cream);
+      padding: 96px 96px;
+    }
+    .october-inner {
+      display: flex;
+      gap: 64px;
+      align-items: center;
+    }
+    .october-img img {
+      width: 280px;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    .october-content { flex: 1; display: flex; flex-direction: column; gap: 20px; }
+    .october-content h2 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 700;
+      color: var(--brown-dark);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.15;
+    }
+    .october-content .place-name {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--brown-dark);
+      font-size: 30px;
+      opacity: 0.8;
+    }
+    .october-content .notes {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--gold);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .october-content .detail {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-mid);
+      font-size: 16px;
+    }
+    .btn-tan {
+      align-self: flex-start;
+      background: var(--brown-mid);
+      color: #d9d9d9;
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      padding: 12px 24px;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .btn-tan:hover { background: var(--brown-light); }
+
+    /* ═══════════════════════════════════════
+       YOUR SCENT YOUR STORY
+    ═══════════════════════════════════════ */
+    .your-scent {
+      background: var(--cream-mid);
+      padding: 96px 96px;
+    }
+    .your-scent .two-col-right img {
+      max-width: 340px;
+    }
+    .your-scent h2 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 700;
+      color: var(--brown-dark);
+      font-size: clamp(40px, 5vw, 60px);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+    .your-scent .tagline {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 600;
+      font-style: italic;
+      color: var(--gold);
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+    .your-scent p {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-dark);
+      font-size: 20px;
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    /* ═══════════════════════════════════════
+       VIDEO TEASER
+    ═══════════════════════════════════════ */
+    .video-teaser {
+      background: var(--tan);
+      padding: 96px 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+    }
+    .video-teaser p {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 400;
+      font-style: italic;
+      color: var(--brown-dark);
+      font-size: clamp(32px, 4vw, 48px);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .play-btn {
+      width: 80px;
+      height: 80px;
+      background: var(--brown-mid);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+    .play-btn:hover { background: var(--brown-light); }
+    .play-btn img { width: 40px; height: 40px; }
+
+    /* ═══════════════════════════════════════
+       PRICING
+    ═══════════════════════════════════════ */
+    .pricing {
+      background: var(--cream);
+      padding: 96px 96px;
+    }
+    .pricing h2 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 400;
+      color: var(--brown-dark);
+      font-size: 48px;
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+    .pricing-card {
+      background: var(--cream-mid);
+      border-radius: 16px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .pricing-card.featured {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      outline: 2px solid var(--gold);
+      transform: translateY(-8px);
+    }
+    .pricing-plan-name {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 400;
+      color: var(--brown-mid);
+      font-size: 16px;
+    }
+    .pricing-price {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 700;
+      color: var(--brown-dark);
+      font-size: 30px;
+      letter-spacing: 0.02em;
+    }
+    .pricing-tagline {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-dark);
+      font-size: 14px;
+    }
+    .pricing-features { display: flex; flex-direction: column; gap: 12px; }
+    .pricing-feature { display: flex; align-items: center; gap: 12px; }
+    .feature-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .pricing-feature span {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 400;
+      color: var(--brown-dark);
+      font-size: 14px;
+    }
+    .btn-cta {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .btn-cta:hover { background: var(--gold-dim); }
+
+    /* ═══════════════════════════════════════
+       REVIEW
+    ═══════════════════════════════════════ */
+    .review {
+      background: var(--cream);
+      padding: 96px 96px;
+    }
+    .review h2 {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: var(--brown-dark);
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .review-inner {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .review-inner img {
+      width: 100%;
+      max-width: 512px;
+      height: auto;
+      object-fit: contain;
+    }
+    .review-quote {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 600;
+      font-style: italic;
+      color: #000;
+      font-size: 20px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .review-body {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 300;
+      color: #373737;
+      font-size: 16px;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .reviewer-name {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 300;
+      color: #000;
+      font-size: 16px;
+    }
+    .reviewer-sub {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      color: #000;
+      font-size: 14px;
+    }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    .footer {
+      background: var(--dark-green);
+      padding: 80px 96px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+    }
+    .footer h2 {
+      font-family: 'Cormorant', Helvetica, serif;
+      font-weight: 700;
+      color: var(--cream-mid);
+      font-size: clamp(32px, 4vw, 48px);
+      text-align: center;
+      line-height: 1.3;
+    }
+    .footer-ctas {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn-gold-full {
+      background: var(--gold);
+      color: var(--brown-dark);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      padding: 14px 48px;
+      border-radius: 9999px;
+      transition: background 0.2s;
+    }
+    .btn-gold-full:hover { background: var(--gold-dim); }
+    .btn-outline-light {
+      border: 1px solid var(--cream-mid);
+      color: var(--cream-mid);
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      font-size: 16px;
+      padding: 14px 48px;
+      border-radius: 9999px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-outline-light:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-bar {
+      width: 100%;
+      padding-top: 40px;
+      border-top: 1px solid #3d4f48;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-bar span,
+    .footer-bar a {
+      font-family: 'DM Sans', Helvetica, sans-serif;
+      font-weight: 200;
+      color: var(--brown-mid);
+      font-size: 16px;
+      transition: color 0.2s;
+    }
+    .footer-bar a:hover { color: var(--gold); }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 1024px) {
+      .navbar         { padding: 20px 40px; }
+      .hero           { padding: 64px 40px; flex-direction: column; }
+      .hero-image     { justify-content: center; }
+      .how-it-works   { padding: 80px 40px; }
+      .cards-grid     { grid-template-columns: 1fr; }
+      .why-sillage    { padding: 80px 40px; }
+      .two-col        { flex-direction: column; }
+      .two-col-right  { justify-content: center; width: 100%; }
+      .two-col-right img { max-width: 100%; }
+      .october-vial   { padding: 80px 40px; }
+      .october-inner  { flex-direction: column; }
+      .october-img img { width: 100%; max-width: 340px; }
+      .your-scent     { padding: 80px 40px; }
+      .video-teaser   { padding: 80px 40px; }
+      .pricing        { padding: 80px 40px; }
+      .pricing-grid   { grid-template-columns: 1fr; }
+      .pricing-card.featured { transform: none; }
+      .review         { padding: 80px 40px; }
+      .footer         { padding: 64px 40px; }
+    }
+
+    @media (max-width: 640px) {
+      .navbar         { padding: 16px 20px; }
+      .navbar-links   { display: none; }
+      .hero           { padding: 48px 20px; }
+      .how-it-works   { padding: 64px 20px; }
+      .why-sillage    { padding: 64px 20px; }
+      .october-vial   { padding: 64px 20px; }
+      .your-scent     { padding: 64px 20px; }
+      .video-teaser   { padding: 64px 20px; }
+      .pricing        { padding: 64px 20px; }
+      .review         { padding: 64px 20px; }
+      .footer         { padding: 48px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <span class="navbar-logo">Sillage</span>
+    <div class="navbar-links">
+      <a href="#home">Home</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#why-sillage">Why Sillage</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#reviews">Reviews</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <span class="hero-est">est. 26</span>
+      <h1 class="hero-heading">Wear A Memory<br />You Haven&#39;t Made Yet.</h1>
+      <p class="hero-sub">A new scent destination, delivered to your door every month.</p>
+      <div class="hero-actions">
+        <button class="btn-gold">Start Your Journey</button>
+        <button class="btn-ghost">Explore Scents &rarr;</button>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="https://c.animaapp.com/moipan2pzKglz8/img/perf-1.png" alt="Perfume bottle" />
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="section-header">
+      <h2>How it Works</h2>
+      <div class="subtitle-italic">A scent ritual, simplified.</div>
+      <p class="subtitle-small">Three steps. One monthly surprise.</p>
+    </div>
+    <div class="cards-grid">
+      <!-- Step 1 -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://c.animaapp.com/moipan2pzKglz8/img/front-hand.svg" alt="Curate icon" />
+        </div>
+        <h3>We Curate.</h3>
+        <p>Our perfumers select a destination-inspired scent each month — places you&#39;ve been, or dream of going.</p>
+      </div>
+      <!-- Step 2 -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://c.animaapp.com/moipan2pzKglz8/img/package.svg" alt="Deliver icon" />
+        </div>
+        <h3>We Deliver.</h3>
+        <p>An 8ml travel vial arrives at your door, with a card telling the story of where this scent takes you.</p>
+      </div>
+      <!-- Step 3 -->
+      <div class="card">
+        <div class="card-icon">
+          <img src="https://c.animaapp.com/moipan2pzKglz8/img/search.svg" alt="Discover icon" />
+        </div>
+        <h3>You Discover.</h3>
+        <p>Wear it, keep it, or swap it. Build a collection of places, one scent at a time.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SILLAGE -->
+  <section class="why-sillage" id="why-sillage">
+    <div class="two-col">
+      <div class="two-col-left">
+        <h2 class="why-title">Why Sillage</h2>
+        <div class="reasons">
+          <div class="reason">
+            <div class="reason-icon">
+              <img src="https://c.animaapp.com/moipan2pzKglz8/img/map-pin.svg" alt="Map pin" />
+            </div>
+            <div>
+              <h3>Destination-inspired, every time.</h3>
+              <p>Each scent is mapped to a real place — a forest in Kyoto, a souk in Marrakech, a clifftop in Brittany.</p>
+            </div>
+          </div>
+          <div class="reason">
+            <div class="reason-icon">
+              <img src="https://c.animaapp.com/moipan2pzKglz8/img/front-hand-1.svg" alt="Hand" />
+            </div>
+            <div>
+              <h3>Curated by master perfumers.</h3>
+              <p>No algorithms. Every vial is selected by hand, chosen for its ability to transport you somewhere new.</p>
+            </div>
+          </div>
+          <div class="reason">
+            <div class="reason-icon">
+              <img src="https://c.animaapp.com/moipan2pzKglz8/img/package-1.svg" alt="Package" />
+            </div>
+            <div>
+              <h3>Packaging worth keeping.</h3>
+              <p>Each delivery comes with a wax-sealed card, tissue wrapping, and a scent story written just for that month.</p>
+            </div>
+          </div>
+        </div>
+        <div class="why-ctas">
+          <button class="btn-dark">Start Subscribing</button>
+          <button class="btn-outline">See Past Scents</button>
+        </div>
+      </div>
+      <div class="two-col-right">
+        <img src="https://c.animaapp.com/moipan2pzKglz8/img/mask-group.png" alt="Why Sillage visual" />
+      </div>
+    </div>
+  </section>
+
+  <!-- THE OCTOBER VIAL -->
+  <section class="october-vial">
+    <div class="october-inner">
+      <div class="october-img">
+        <img src="https://c.animaapp.com/moipan2pzKglz8/img/picture---bg.png" alt="October Vial" />
+      </div>
+      <div class="october-content">
+        <h2>The October Vial.</h2>
+        <div class="place-name">For&ecirc;t de Brocéliande.</div>
+        <p class="notes">
+          Notes of wet oak, white cedar, and black pepper.<br />
+          Inspired by the mythic forests of Brittany. Ancient, mossy, still.
+        </p>
+        <p class="detail">8ml &middot; Eau de Parfum &middot; Limited edition</p>
+        <button class="btn-tan">Get This Scent</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- YOUR SCENT YOUR STORY -->
+  <section class="your-scent">
+    <div class="two-col">
+      <div class="two-col-left">
+        <h2>Your scent. Your story.</h2>
+        <div class="tagline">Built for the curious.</div>
+        <p>Sillage is for people who travel with intention, collect experiences, and believe a scent is the shortest distance between here and somewhere else.</p>
+        <p>Every subscription includes free shipping, a handwritten destination card, and access to our archive of past vials.</p>
+        <button class="btn-gold" style="margin-top:8px;">Start Your Journey</button>
+      </div>
+      <div class="two-col-right">
+        <img src="https://c.animaapp.com/moipan2pzKglz8/img/mask-group-1.png" alt="Your scent story" />
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO TEASER -->
+  <section class="video-teaser">
+    <p>See what arrives at your door...</p>
+    <button class="play-btn" aria-label="Play video">
+      <img src="https://c.animaapp.com/moipan2pzKglz8/img/play-arrow-filled.svg" alt="Play" />
+    </button>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing" id="pricing">
+    <h2>Choose your plan</h2>
+    <div class="pricing-grid">
+
+      <!-- Wanderer -->
+      <div class="pricing-card">
+        <div>
+          <div class="pricing-plan-name">Wanderer</div>
+          <div class="pricing-price">$18/mo</div>
+          <div class="pricing-tagline">For the curious.</div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="feature-dot"></span><span>1 vial per month (8ml)</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Destination card included</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Free shipping</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Scent archive access</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Cancel anytime</span></li>
+        </ul>
+        <button class="btn-cta">Start free trial</button>
+      </div>
+
+      <!-- Voyager (featured) -->
+      <div class="pricing-card featured">
+        <div>
+          <div class="pricing-plan-name">Voyager</div>
+          <div class="pricing-price">$28/mo</div>
+          <div class="pricing-tagline">For the devoted.</div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="feature-dot"></span><span>2 vials per month (8ml each)</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Destination card included</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Free shipping</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Swap any vial once</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Early access to limited editions</span></li>
+        </ul>
+        <button class="btn-cta">Start free trial</button>
+      </div>
+
+      <!-- Connoisseur -->
+      <div class="pricing-card">
+        <div>
+          <div class="pricing-plan-name">Connoisseur</div>
+          <div class="pricing-price">$45/mo</div>
+          <div class="pricing-tagline">For the collector.</div>
+        </div>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><span class="feature-dot"></span><span>3 vials per month (8ml each)</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Handwritten destination card</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Free express shipping</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Unlimited swaps</span></li>
+          <li class="pricing-feature"><span class="feature-dot"></span><span>Exclusive annual gift</span></li>
+        </ul>
+        <button class="btn-cta">Start free trial</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- REVIEW -->
+  <section class="review" id="reviews">
+    <h2>What our subscribers say</h2>
+    <div class="review-inner">
+      <img src="https://c.animaapp.com/moipan2pzKglz8/img/reveiw.png" alt="Reviewer stars" />
+      <blockquote class="review-quote">&#34;I&#39;ve never been to Kyoto. Now I feel like I have.&#34;</blockquote>
+      <p class="review-body">The October vial stopped me in my tracks. I wore it every day until it ran out.</p>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:4px;">
+        <span class="reviewer-name">Margaux D.</span>
+        <span class="reviewer-sub">Voyager subscriber &middot; Paris</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h2>Ready to begin your journey?</h2>
+    <div class="footer-ctas">
+      <button class="btn-gold-full">Start free trial</button>
+      <button class="btn-outline-light">Explore scents</button>
+    </div>
+    <div class="footer-bar">
+      <span>&copy; 2026 Sillage. All rights reserved.</span>
+      <a href="#">Privacy policy</a>
+    </div>
+  </footer>
+
+</body>
+</html>
